@@ -1,0 +1,29 @@
+﻿@using valorantProject.Models.Class
+@model List<Streamers>
+<br />
+<br />
+<br />
+<br />
+<br />
+<div id="stream" class="text-center">
+    <h1 style="color:#2e2e2e" class="streamer">Yayıncılarımız</h1>
+</div>
+<div class="container">
+    @foreach (var item in Model)
+    {
+    <div class="box1">
+        <img class="image" src="@item.Image">
+
+        <div class="name_job">
+            @item.Name
+        </div>
+        
+        <p class="description">@item.Description</p>
+        <div class="btns">
+            <button href="@item.YoutubeUrl">YouTube </button>
+            <button href="@item.TwitchUrl">Twitch</button>
+        </div>
+    </div>
+
+    }
+</div>

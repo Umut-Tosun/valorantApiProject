@@ -1,0 +1,42 @@
+﻿<section id="iletisim">
+    <div class="feed">
+        <div class="feed-box">
+            <div class="left"></div>
+            <div class="right">
+                <form method="post" id="subForm">
+                    <h2 class="cont">İletişime Geç</h2>
+                    <input type="text" class="field" id="Name" name="Name" placeholder="İsim">
+                    <input type="text" class="field" id="SurName" name="SurName" placeholder="Soyisim">
+                    <input type="text" class="field" id="Mail" name="Mail" placeholder="Mail">
+                    <input type="text" class="field" id="Subject" name="Subject" placeholder="Konu">
+                    <textarea class="field area" id="Message" name="Message" placeholder="Mesaj"></textarea>
+                    <button id="btn" class="btn">Gönder</button>
+                    <div id="sonuc"></div><br />
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#btn").click(function (e) {
+            var bolum = document.createElement("div");
+            bolum.className = "alert alert-success";
+            bolum.innerHTML = "Yorumunuz Başarıyla Gönderildi ! Sayfa Yenileniyor ...";
+            document.body.appendChild(bolum);
+            e.preventDefault();
+            var veri = $("#subForm").serialize();
+            $.ajax({
+                type: "post",
+                url: "/Default/PartialContact/",
+                data: veri,
+                success: function (f) {
+                    $("#sonuc").html(bolum);
+                    setTimeout(() => { window.location.reload() }, 7500);
+                }
+            });
+        });
+    });
+</script>

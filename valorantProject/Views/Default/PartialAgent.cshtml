@@ -1,0 +1,44 @@
+﻿@model valorantProject.Models.ValorantAgent
+<div id="ajan" class="agent-container">
+    <h1 class="agent">Ajanlar Ve <span class="info">Bilgileri</span> </h1>
+    <div class="slide-container swiper">
+        <div class="slide-content">
+            <div class="card-wrapper swiper-wrapper">
+                @foreach (var item in Model.data)
+                {
+                    if (item.isPlayableCharacter == true)
+                    {
+                        <div class="card swiper-slide">
+                            <div class="image-content">
+                                <span class="overlay"></span>
+
+                                <div class="card-image">
+                                    <img src="@item.displayIcon" alt="" class="card-img">
+                                </div>
+                            </div>
+
+                            <div class="card-content">
+                                <h2 class="name">@item.displayName</h2>
+                                <h2><span class="badge bg-primary">@item.role.displayName</span></h2>
+                                <h4 class="name">Ajan Yetenekleri</h4>
+                                @for (int i = 0; i < @item.abilities.Count; i++)
+                                {
+                                    <span class="badge bg-danger">@item.abilities[i].displayName</span>
+                                    <br />
+                                }
+
+                                <p class="description">@item.description.Substring(0, 145)</p>
+
+                                <button class="button">Daha Fazla</button>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,21 @@
+﻿@using valorantProject.Models.Class
+@model List<Maps>
+
+<div class="tracker">
+
+    <ul>
+        <a class="mapsler" href="#">Lineup Haritaları</a>
+        @foreach (var item in Model)
+        {
+            <li><a href="#">@item.Name</a></li>
+        }
+    </ul>
+</div>
+<div class="w3-content w3-section" style="max-width:500px">
+    @foreach (var item in Model)
+    {
+        <img class="mySlides" style="width:1500px" src="@item.lineUpUrl">
+    }
+</div>
+
+

@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @Html.Action("PartialHead", "Default")
+</head>
+
+<body>
+    @Html.Action("PartialDashboard", "Default")
+
+    @Html.Action("PartialWelcome", "Default")
+
+    @Html.Action("PartialAgent", "Default")
+    @Html.Action("PartialTier", "Default")
+
+    <div id="map" class="maps-container">
+        <h1 class="baslik">Haritalar & <span>Lineuplar</span> </h1>
+
+        <div class="slides">
+            @Html.Action("PartialMaps", "Default")
+            @Html.Action("PartialStreamers", "Default")
+        </div>
+
+        @Html.Action("PartialContact", "Default")
+
+        @Html.Action("PartialFooter", "Default")
+
+        @Html.Action("PartialScripts", "Default")
+    </div>
+
+</body>
+</html>
