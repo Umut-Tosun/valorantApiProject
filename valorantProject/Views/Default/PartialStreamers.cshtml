@@ -11,19 +11,19 @@
 <div class="container">
     @foreach (var item in Model)
     {
-    <div class="box1">
-        <img class="image" src="@item.Image">
+        <div class="box1">
+            <img class="image" src="@item.Image">
 
-        <div class="name_job">
-            @item.Name
+            <div class="name_job">
+                @item.Name
+            </div>
+
+            <p>@item.Description</p>
+            <div class="btns">
+                <button href="@item.YoutubeUrl">YouTube </button>
+                <button href="@item.TwitchUrl">Twitch</button>
+            </div>
         </div>
-        
-        <p class="description">@item.Description</p>
-        <div class="btns">
-            <button href="@item.YoutubeUrl">YouTube </button>
-            <button href="@item.TwitchUrl">Twitch</button>
-        </div>
-    </div>
 
     }
 </div>

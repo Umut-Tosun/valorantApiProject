@@ -533,7 +533,7 @@ img {
     margin-bottom: 5px;
 }
 
-.btnsbtns {
+.btns {
     margin-top: 20px;
     margin-bottom: 5px;
     display: flex;
@@ -541,38 +541,38 @@ img {
     width: 100%;
 }
 
-.btns button {
-    background: #8e44ad;
-    width: 100%;
-    padding: 9px 0px;
-    outline: none;
-    border: 2px solid #8e44ad;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: 400;
-    color: #8e44ad;
-    transition: all 0.3s linear;
-}
-
-    .btns button:first-child {
-        background: none;
-        margin-right: 5px;
-    }
-
-    .btns button:last-child {
-        color: #fff;
-        margin-left: 5px;
-    }
-
-    .btns button:first-child:hover {
+    .btns button {
         background: #8e44ad;
-        color: #fff;
+        width: 100%;
+        padding: 9px 0px;
+        outline: none;
+        border: 2px solid #8e44ad;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 400;
+        color: #8e44ad;
+        transition: all 0.3s linear;
     }
 
-    .btns button:hover {
-        color: #fff;
-    }
+        .btns button:first-child {
+            background: none;
+            margin-right: 5px;
+        }
+
+        .btns button:last-child {
+            color: #fff;
+            margin-left: 5px;
+        }
+
+        .btns button:first-child:hover {
+            background: #8e44ad;
+            color: #fff;
+        }
+
+        .btns button:hover {
+            color: #fff;
+        }
 
 @media (max-width:1045px) {
     .container .box {

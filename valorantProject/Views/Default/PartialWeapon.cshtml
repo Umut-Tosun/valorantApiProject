@@ -1,0 +1,36 @@
+﻿@model valorantProject.Models.Weapons.Root2
+<div id="weapon" class="agent-container" style="height:600px">
+    <h1 class="agent">Silahlar</h1>
+    <div class="slide-container swiper">
+        <div class="slide-content">
+            <div class="card-wrapper swiper-wrapper">
+                @foreach (var item in Model.data)
+                {
+
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <img src="@item.displayIcon" style="height:100px" alt="" class="card-img">
+                        </div>
+
+                        <div class="card-content" style="background-color:#000000">
+                            <p style="color:#00efff">Skinler [5 Tane]</p>
+                            @for (int i = 0; i < 5; i++)
+                            {
+
+                        <a href="@item.skins[i].displayIcon"> <h2 class="name" style="color:#ffffff">@item.skins[i].displayName</h2></a>
+                            }
+                            <h2><span class="badge bg-primary">@item.displayName</span></h2>
+                        </div>
+                    </div>
+
+                }
+            </div>
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </div>
+</div>
+
+

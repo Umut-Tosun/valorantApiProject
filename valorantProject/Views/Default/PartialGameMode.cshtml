@@ -1,0 +1,31 @@
+﻿@model valorantProject.Models.GameModes.Root2
+<div id="ajan" class="agent-container">
+    <h1 class="agent">Oyun Modları</h1>
+    <div class="slide-container swiper">
+        <div class="slide-content">
+            <div class="card-wrapper swiper-wrapper">
+                @foreach (var item in Model.data)
+                {
+                    <div class="card swiper-slide">
+                        <div class="image-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-image" style="background-color:#000000">
+                                <img src="@item.displayIcon" alt="">
+                            </div>
+                        </div>
+
+                        <div class="card-content">  
+                            <h2><span class="badge bg-primary">@item.displayName</span></h2>
+                            <h2><span class="badge bg-primary"></span></h2>
+                        </div>
+                    </div>
+
+                }
+            </div>
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</div>

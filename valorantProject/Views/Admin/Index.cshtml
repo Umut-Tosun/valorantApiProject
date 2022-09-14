@@ -1,0 +1,59 @@
+﻿@using valorantProject.Models.Class
+@model List<Streamers>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yayıncı Listesi</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Açıklama</th>
+        <th>Görsel</th>
+        <th>YouTube Url</th>
+        <th>Twitch Url</th>
+        <th>Durum</th>
+
+    </tr>
+
+    @foreach (var Streamer in Model)
+    {
+        <tr>
+            <td>@Streamer.ID</td>
+            <td>@Streamer.Name</td>
+            <td>@Streamer.Description</td>
+            <td><img src="@Streamer.Image" style="height:100px" /></td>
+            <td>@Streamer.YoutubeUrl</td>
+            <td>@Streamer.TwitchUrl</td>
+            @if (Streamer.status == true)
+            {
+                <td>
+                    <span class="badge badge-success">Aktif</span>
+                </td>
+            }
+            else
+            {
+                <td>
+                    <span class="badge badge-danger">Pasif</span>
+                </td>
+            }
+            <td>@Streamer.TwitchUrl</td>
+            @if (Streamer.status == true)
+            {
+                <td><a href="/Admin/DeleteStreamer/@Streamer.ID" class="btn btn-danger">Pasif Yap</a></td>
+            }
+            else
+            {
+                <td><a href="/Admin/DeleteStreamer/@Streamer.ID" class="btn btn-success">Aktif Yap</a></td>
+            }
+            <td><a href="/Admin/GetStreamer/@Streamer.ID" class="btn btn-info">Güncelle</a></td>
+        </tr>
+    }
+
+</table>
+<a href="/Admin/AddStreamer/" class="btn btn-warning">Yeni Yayıncı Ekle</a>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>

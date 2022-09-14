@@ -1,0 +1,43 @@
+﻿@using valorantProject.Models.Class
+@model List<Contact>
+@{
+    ViewBag.Title = "ListContact";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>E-posta</th>
+        <th>Konu</th>
+        <th>Tarih</th>
+        <th>Durum</th>
+    </tr>
+
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.ID</td>
+            <td>@user.Name</td>
+            <td>@user.SurName</td>
+            <td>@user.Mail</td>
+            <td>@user.Subject</td>
+            <td>@user.date</td>
+            @if (user.isRead == true)
+            {
+                <td><span class="badge badge-success">Okundu</span></td>
+            }
+            else
+            {
+                <td><span class="badge badge-danger">Okunmadı</span></td>
+            }
+
+            <td><a href="/Admin/GetContact/@user.ID" class="btn btn-info">Detaylar</a></td>
+        </tr>
+    }
+
+</table>
+
+

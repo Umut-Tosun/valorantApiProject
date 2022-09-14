@@ -6,6 +6,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using valorantProject.Models;
+using valorantProject.Models.Weapons;
 using valorantProject.Models.Class;
 
 namespace valorantProject.Controllers
@@ -47,6 +48,15 @@ namespace valorantProject.Controllers
             Root tierList = JsonConvert.DeserializeObject<Root>(json);
 
             return PartialView(tierList);
+        }
+        public PartialViewResult PartialWeapon()
+        {
+            WebClient client = new WebClient();
+
+            var json = client.DownloadString("https://valorant-api.com/v1/weapons");
+            Root2 weaponList = JsonConvert.DeserializeObject<Root2>(json);
+
+            return PartialView(weaponList);
         }
         public PartialViewResult PartialFooter()
         {

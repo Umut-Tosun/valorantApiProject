@@ -1,0 +1,31 @@
+﻿@model valorantProject.Models.Class.Streamers
+@{
+    ViewBag.Title = "GetStreamer";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yayıncı Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("UpdateStreamer", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Name)
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Description)
+    @Html.TextAreaFor(x => x.Description, 15, 1, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Image)
+    @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.YoutubeUrl)
+    @Html.TextBoxFor(x => x.YoutubeUrl, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TwitchUrl)
+    @Html.TextBoxFor(x => x.TwitchUrl, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Yayıncı Güncelle</button>
+}
+

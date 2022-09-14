@@ -16,5 +16,6 @@ namespace valorantProject.Models.Class
         public string Subject { get; set; }
         public string Message { get; set; }
         public DateTime date { get; set; }
+        public bool isRead { get; set; }
     }
 }

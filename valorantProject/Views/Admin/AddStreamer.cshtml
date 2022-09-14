@@ -1,0 +1,27 @@
+﻿@model valorantProject.Models.Class.Streamers
+@{
+    ViewBag.Title = "AddStreamer";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Yayıncı Ekle</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.Name)
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Description)
+    @Html.TextAreaFor(x => x.Description, 15, 1, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Image)
+    @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.YoutubeUrl)
+    @Html.TextBoxFor(x => x.YoutubeUrl, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TwitchUrl)
+    @Html.TextBoxFor(x => x.TwitchUrl, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Yayıncı  Ekle</button>
+</form>
+

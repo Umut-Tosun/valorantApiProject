@@ -1,0 +1,32 @@
+﻿@model valorantProject.Models.Class.Contact
+@{
+    ViewBag.Title = "GetContact";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Mesaj Detayları</h2>
+<br />
+@using (Html.BeginForm("UpdateContact", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Name)
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.SurName)
+    @Html.TextBoxFor(x => x.SurName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Subject)
+    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Message)
+    @Html.TextAreaFor(x => x.Message, 15, 1, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.date)
+    @Html.TextBoxFor(x => x.date, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Mesajı Okundu olarak İşaretle</button>
+}
+
+
