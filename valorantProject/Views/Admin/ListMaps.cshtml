@@ -1,0 +1,56 @@
+﻿@using valorantProject.Models.Class
+@model List<Maps>
+@{
+    ViewBag.Title = "ListMaps";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Harita Listesi</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Görsel</th>
+        <th>Line-Up Url</th>
+        <th>Açıklama</th>
+        <th>Durum</th>
+        <th>Güncelle</th>
+
+    </tr>
+
+    @foreach (var maps in Model)
+    {
+        <tr>
+            <td>@maps.ID</td>
+            <td>@maps.Name</td>
+            <td><img src="@maps.ImageUrl" style="height:100px" /></td>
+            <td>@maps.lineUpUrl</td>
+
+            @if (maps.status == true)
+            {
+                <td>
+                    <span class="badge badge-success">Aktif</span>
+                </td>
+            }
+            else
+            {
+                <td>
+                    <span class="badge badge-danger">Pasif</span>
+                </td>
+            }
+            @if (maps.status == true)
+            {
+                <td><a href="/Admin/DeleteMap/@maps.ID" class="btn btn-danger">Pasif Yap</a></td>
+            }
+            else
+            {
+                <td><a href="/Admin/DeleteMap/@maps.ID" class="btn btn-success">Aktif Yap</a></td>
+            }
+            <td><a href="/Admin/GetMap/@maps.ID" class="btn btn-info">Güncelle</a></td>
+        </tr>
+    }
+
+</table>
+<a href="/Admin/AddMap/" class="btn btn-warning">Yeni Harita Ekle</a>
+

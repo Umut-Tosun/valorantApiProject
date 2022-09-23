@@ -21,14 +21,14 @@ namespace valorantProject.Controllers
         }
         public PartialViewResult PartialMaps()
         {
-            var values = c.Maps.ToList();
+            var values = c.Maps.Where(x=>x.status==true).ToList();
             return PartialView(values);
 
         }
         public PartialViewResult PartialStreamers()
         {
 
-            var values = c.Streamers.ToList();
+            var values = c.Streamers.Where(x => x.status == true).ToList();
             return PartialView(values);
         }
         public PartialViewResult PartialAgent()

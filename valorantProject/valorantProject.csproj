@@ -334,6 +334,14 @@
     <Compile Include="Migrations\202209141218302_mig_newColumnContact_add.designer.cs">
       <DependentUpon>202209141218302_mig_newColumnContact_add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202209221240439_mig_newColumnMaps_add.cs" />
+    <Compile Include="Migrations\202209221240439_mig_newColumnMaps_add.designer.cs">
+      <DependentUpon>202209221240439_mig_newColumnMaps_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209221244125_mig2_newColumnMaps_add.cs" />
+    <Compile Include="Migrations\202209221244125_mig2_newColumnMaps_add.designer.cs">
+      <DependentUpon>202209221244125_mig2_newColumnMaps_add.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Agent\Ability.cs" />
     <Compile Include="Models\Class\Admin.cs" />
@@ -530,6 +538,9 @@
     <Content Include="Views\Admin\AddStreamer.cshtml" />
     <Content Include="Views\Admin\ListContact.cshtml" />
     <Content Include="Views\Admin\GetContact.cshtml" />
+    <Content Include="Views\Admin\ListMaps.cshtml" />
+    <Content Include="Views\Admin\AddMap.cshtml" />
+    <Content Include="Views\Admin\GetMap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -565,6 +576,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202209141218302_mig_newColumnContact_add.resx">
       <DependentUpon>202209141218302_mig_newColumnContact_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209221240439_mig_newColumnMaps_add.resx">
+      <DependentUpon>202209221240439_mig_newColumnMaps_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209221244125_mig2_newColumnMaps_add.resx">
+      <DependentUpon>202209221244125_mig2_newColumnMaps_add.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

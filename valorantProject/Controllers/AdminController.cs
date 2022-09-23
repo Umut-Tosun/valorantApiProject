@@ -7,11 +7,12 @@ using valorantProject.Models.Class;
 
 namespace valorantProject.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         // GET: Admin
         Context c = new Context();
-        [Authorize]
+        
         public ActionResult Index()
         {
             var values = c.Streamers.ToList();
@@ -44,7 +45,6 @@ namespace valorantProject.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
-
         [HttpGet]
         public ActionResult AddStreamer()
         {
@@ -58,6 +58,9 @@ namespace valorantProject.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+
+
+
         public ActionResult ListContact()
         {
             var values = c.Contacts.ToList();
@@ -75,6 +78,52 @@ namespace valorantProject.Controllers
             strm.isRead = contact.isRead;
             c.SaveChanges();
             return RedirectToAction("ListContact");
+        }
+
+
+
+        public ActionResult ListMaps()
+        {
+            var values = c.Maps.ToList();
+            return View(values);
+        }
+        public ActionResult AddMap()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddMap(Maps map)
+        {
+            map.status = true;
+            c.Maps.Add(map);
+            c.SaveChanges();
+            return RedirectToAction("ListMaps");
+        }
+        public ActionResult GetMap(int id)
+        {
+            var map = c.Maps.Find(id);
+            return View("GetMap", map);
+        }
+        public ActionResult UpdateMap(Maps map)
+        {
+            var strm = c.Maps.Find(map.ID);
+            strm.Description = map.Description;
+            strm.Name = map.Name;
+            strm.ImageUrl = map.ImageUrl;
+            strm.lineUpUrl = map.lineUpUrl;
+            c.SaveChanges();
+            return RedirectToAction("ListMaps");
+        }
+        public ActionResult DeleteMap(int id)
+        {
+            var map = c.Maps.Find(id);
+            if (map.status == true)
+                c.Maps.Find(id).status = false;
+            else
+                c.Maps.Find(id).status = true;
+
+            c.SaveChanges();
+            return RedirectToAction("ListMaps");
         }
     }
 }

@@ -1,0 +1,28 @@
+﻿@model valorantProject.Models.Class.Maps
+@{
+    ViewBag.Title = "GetMap";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Harita Güncelle</h2>
+<br />
+@using (Html.BeginForm("UpdateMap", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Name)
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ImageUrl)
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.lineUpUrl)
+    @Html.TextBoxFor(x => x.lineUpUrl, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Description)
+    @Html.TextAreaFor(x => x.Description, 15, 1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Haritayı Güncelle</button>
+}
+

@@ -1,0 +1,24 @@
+﻿@model valorantProject.Models.Class.Maps
+@{
+    ViewBag.Title = "AddMap";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Harita Ekle</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.Name)
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Description)
+    @Html.TextAreaFor(x => x.Description, 15, 1, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ImageUrl)
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.lineUpUrl)
+    @Html.TextBoxFor(x => x.lineUpUrl, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Yayıncı  Ekle</button>
+</form>
+
